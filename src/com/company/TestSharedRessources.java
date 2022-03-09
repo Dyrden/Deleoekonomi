@@ -43,7 +43,7 @@ public class TestSharedRessources {
     } else if (choice == 2) { // get available items in cataloque
       Item[] availableItems = catalogue.getAvailableItems();
       for (int i = 0; i < availableItems.length; i++) {
-        System.out.println(i + " " + availableItems[i]);
+        System.out.println(availableItems[i]);
       }
     } else if (choice == 3) { // Add new Item to catalogue
       // Hardcoded values for new Item
