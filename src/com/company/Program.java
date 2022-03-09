@@ -27,7 +27,7 @@ public class Program {
         catalogue.addItem(item6);
         catalogue.addItem(item7);
 
-        System.out.println("Hvad kunne du tænke dig?");
+        System.out.println("What would you like to do?");
         while (running) {
             displayChoice();
             choice(sc.nextLine());
