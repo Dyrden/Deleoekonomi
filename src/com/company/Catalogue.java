@@ -61,6 +61,17 @@ public class Catalogue {
         return null;
     }
 
+    public void loanItem(Item find, String name) {
+
+        for (Item item : catalogue) {
+            if (item.getDescription().equalsIgnoreCase(find.getDescription())) {
+                item.setAvailable(false);
+                item.setLender(name);
+                break;
+            }
+        }
+    }
+
     public void loanItem(Item find) {
 
         for (Item item : catalogue) {
@@ -71,6 +82,16 @@ public class Catalogue {
         }
     }
 
+    public void returnItem(Item found, String name) {
+        for (Item item : catalogue) {
+            if (item.getDescription().equalsIgnoreCase(found.getDescription()) && item.getLender().equalsIgnoreCase(name)) {
+                item.setAvailable(true);
+                item.setLender("");
+                break;
+
+            }
+        }
+    }
     public void returnItem(Item found) {
         for (Item item : catalogue) {
             if (item.getDescription().equalsIgnoreCase(found.getDescription())) {

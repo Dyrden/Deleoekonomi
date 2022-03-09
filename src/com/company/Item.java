@@ -5,6 +5,7 @@ public class Item {
     private String category;
     private String description;
     private boolean available;
+    private String lender;
 
 
     public Item(String category, String description) {
@@ -12,6 +13,7 @@ public class Item {
         this.description = description;
         this.available = true;
     }
+
     public Item(String category, String description, boolean available) {
         this.category = category;
         this.description = description;
@@ -39,5 +41,13 @@ public class Item {
     @Override
     public String toString() {
         return "Category : " + category + ", Description : " + description + ", Available : " + available;
+    }
+
+    public String getLender() {
+        return lender;
+    }
+
+    public void setLender(String lender) {
+        this.lender = lender;
     }
 }

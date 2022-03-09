@@ -64,6 +64,7 @@ public class Program {
             System.out.println(item);
         }
     }
+
     public void displayAvailableList() {
         Item[] allItems = catalogue.getAvailableItems();
         for (Item item : allItems) {
@@ -77,26 +78,28 @@ public class Program {
         String directory = sc.nextLine();
         System.out.println("Enter the description of the item");
         String description = sc.nextLine();
-        Item item = new Item(directory,description);
+        Item item = new Item(directory, description);
         catalogue.addItem(item);
     }
 
     public void displayLoanItem() {
         System.out.println("Enter the description of the item you wish to borrow");
         String description = sc.nextLine();
-        Item item = new Item(null,description);
-        catalogue.loanItem(item);
+        Item item = new Item(null, description);
+        System.out.println("Enter your name");
+        String name = sc.nextLine();
+        if (name.isBlank()) catalogue.loanItem(item);
+        else catalogue.loanItem(item, name);
+
     }
 
     public void displayReturnItem() {
         System.out.println("Enter the description of the item you wish to return");
         String description = sc.nextLine();
-        Item item = new Item(null,description);
-        catalogue.returnItem(item);
+        Item item = new Item(null, description);
+        System.out.println("Enter your name");
+        String name = sc.nextLine();
+        if (name.isBlank()) catalogue.returnItem(item, name);
+        else catalogue.returnItem(item);
     }
-
-
-
-
-
 }
