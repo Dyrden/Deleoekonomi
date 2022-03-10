@@ -40,7 +40,11 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Category : " + category + ", Description : " + description + ", Available : " + available;
+        if (!available) {
+            return "Category: " + category + ", Description: " + description + ", Available: " + available + ", Borrower: " + lender;
+        } else {
+            return "Category: " + category + ", Description: " + description + ", Available: " + available;
+        }
     }
 
     public String getLender() {
